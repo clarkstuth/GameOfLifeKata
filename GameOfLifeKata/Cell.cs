@@ -1,18 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GameOfLifeKata
+﻿namespace GameOfLifeKata
 {
     public class Cell
     {
-        public bool Alive { get; set; }
-
-        public Cell()
+        private bool alive;
+        public bool Alive
         {
-            Alive = false;
+            get { return alive; }
+            set
+            {
+                alive = value;
+                dead = !alive;
+            }
+        }
+
+        private bool dead;
+
+        public bool Dead
+        {
+            get { return dead; }
+            set
+            {
+                dead = value;
+                Alive = !dead;
+            }
         }
 
     }

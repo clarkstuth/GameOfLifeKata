@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
 using GameOfLifeKata;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -114,6 +112,8 @@ namespace GameOfLifeKataTests
             game.StartGame(NumCells);
             game.Proceed();
         }
+
+
 
     }
 }

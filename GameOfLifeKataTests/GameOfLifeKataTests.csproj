@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CellTest.cs" />
     <Compile Include="GameBoardTest.cs" />
+    <Compile Include="GameTurnProcessorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
