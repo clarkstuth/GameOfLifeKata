@@ -8,5 +8,6 @@ namespace GameOfLifeKata
 {
     public class Class1
     {
+        //a comment
     }
 }
