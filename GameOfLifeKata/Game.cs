@@ -9,16 +9,19 @@ namespace GameOfLifeKata
     public class Game
     {
         public Cell[,] GameBoard { get; private set; }
+        public int TurnNumber { get; private set; }
+
+        private bool Started { get; set; }
 
         public Game(int boardWidth, int boardHeight)
         {
             GameBoard = new Cell[boardWidth, boardHeight];
-
             InitializeGame();
         }
 
         private void InitializeGame()
         {
+            Started = false;
             for (var x = 0; x < GameBoard.Length/GameBoard.GetLength(1); x++)
             {
                 for (var y = 0; y < GameBoard.GetLength(1); y++)
@@ -41,6 +44,11 @@ namespace GameOfLifeKata
 
         public void StartGame(int numberOfAliveCells)
         {
+            if (Started)
+                throw new InvalidOperationException("Game can not be started while already running.");
+
+            Started = true;
+
             var aliveCells = 0;
             while (aliveCells < numberOfAliveCells)
             {
@@ -48,6 +56,12 @@ namespace GameOfLifeKata
                 StartRandomCell(random);
                 ++aliveCells;
             }
+            TurnNumber = 1;
+        }
+
+        public void Proceed()
+        {
+            TurnNumber++;
         }
     }
 }
