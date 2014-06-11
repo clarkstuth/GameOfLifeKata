@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace GameOfLifeKata
 {
-    public class Class1
+    public class Cell
     {
-        //a comment
+        public bool Alive { get; set; }
+
+        public Cell()
+        {
+            Alive = false;
+        }
+
     }
 }
