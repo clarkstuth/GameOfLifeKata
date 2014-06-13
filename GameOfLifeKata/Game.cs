@@ -18,9 +18,9 @@ namespace GameOfLifeKata
         private void InitializeGame()
         {
             Started = false;
-            for (var x = 0; x < GameBoard.Length/GameBoard.GetLength(1); x++)
+            for (var x = 0; x < GameBoard.GetWidth(); x++)
             {
-                for (var y = 0; y < GameBoard.GetLength(1); y++)
+                for (var y = 0; y < GameBoard.GetHeight(); y++)
                 {
                     GameBoard[x, y] = new Cell();
                 }
@@ -32,8 +32,8 @@ namespace GameOfLifeKata
             int col, row;
             do
             {
-                col = random.Next(GameBoard.Length / GameBoard.GetLength(1));
-                row = random.Next(GameBoard.GetLength(1));
+                col = random.Next(GameBoard.GetWidth());
+                row = random.Next(GameBoard.GetHeight());
             } while (GameBoard[col,row].Alive);
             GameBoard[col,row].Alive = true;
         }

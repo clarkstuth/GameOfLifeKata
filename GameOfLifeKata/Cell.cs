@@ -14,7 +14,6 @@
         }
 
         private bool dead;
-
         public bool Dead
         {
             get { return dead; }
